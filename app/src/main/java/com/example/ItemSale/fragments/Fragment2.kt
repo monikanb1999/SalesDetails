@@ -7,15 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.ItemSale.R
 
+class Fragment2 : Fragment() {
 
-class PaidFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_paid, container, false)
+        return inflater.inflate(R.layout.fragment_2, container, false)
     }
 
 }
