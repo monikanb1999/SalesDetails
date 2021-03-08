@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,6 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cus_name"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:hint="Custumer Name"
         />
 
@@ -18,36 +21,57 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Total Amount"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:id="@+id/tot_amt"
         />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Sale Date"
-
+        app:layout_constraintTop_toBottomOf="@+id/cus_name"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:id="@+id/sale_date"/>
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/balance_amt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tot_amt"
         android:hint="balance amount"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="pay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balance_amt"
         android:id="@+id/pay_btn"
+        android:layout_marginRight="50dp"
        />
+
+    <!--        tools:layout_editor_absoluteX="-5dp"-->
+<!--        tools:layout_editor_absoluteY="90dp" />-->
+
     <Button
+        android:id="@+id/delete_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/delete_btn"
         android:text="delete"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/balance_amt"
+       app:layout_constraintRight_toLeftOf="@+id/pay_btn"
+        android:layout_marginRight="50dp"
+
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="50dp"
        />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

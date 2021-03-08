@@ -31,7 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="search"
-        android:visibility="gone"
         android:id="@+id/search_view"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:layout_constraintTop_toBottomOf="@+id/tablayout"
