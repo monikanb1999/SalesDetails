@@ -1,54 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.Fragment2">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/cus_name2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:hint="Custumer Name"/>
+    <data>
+        <variable
+            name="handle2"
+            type="com.example.ItemSale.Handle" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Sale Date"
-        app:layout_constraintTop_toBottomOf="@+id/cus_name2"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="10dp"
-        android:id="@+id/sale_date2"/>
+    </data>
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/balance_amt2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:hint="balance amount"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".fragments.Fragment2">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="pay"
-        android:layout_margin="10dp"
-        android:padding="5dp"
-        android:id="@+id/pay_btn2"
-        app:layout_constraintTop_toBottomOf="@id/sale_date2"
-        app:layout_constraintRight_toLeftOf="@+id/delete_btn2"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/delete_btn2"
-        android:text="delete"
-        android:layout_margin="10dp"
-        android:padding="5dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_date2"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cus_name2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:hint="Custumer Name" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Sale Date"
+            app:layout_constraintTop_toBottomOf="@+id/cus_name2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginStart="10dp"
+            android:id="@+id/sale_date2" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/total_amt2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="balance amount" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/balance_amt2"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="balance amount" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pay"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:id="@+id/pay_btn2"
+            app:layout_constraintTop_toBottomOf="@id/sale_date2"
+            app:layout_constraintRight_toLeftOf="@+id/delete_btn2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_btn2"
+            android:text="delete"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sale_date2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

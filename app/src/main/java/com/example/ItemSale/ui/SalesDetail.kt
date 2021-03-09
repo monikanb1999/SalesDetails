@@ -1,6 +1,7 @@
 package com.example.ItemSale.ui
 
 import android.os.Bundle
+import android.os.Handler
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
@@ -9,7 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ItemSale.Handle
 import com.example.ItemSale.R
 import com.example.ItemSale.databinding.DetailSalesBinding
 import com.example.ItemSale.fragments.Fragment1
@@ -23,15 +26,26 @@ class SalesDetail : AppCompatActivity() {
     private val mRecyclerView: RecyclerView? = null
 //    private val mAdapter: ExampleAdapter? = null
     private val mLayoutManager: RecyclerView.LayoutManager? = null
-  lateinit var binding:DetailSalesBinding
-  var fragment:Fragment?=null
+    lateinit var binding:DetailSalesBinding
+    var fragment:Fragment?=null
     var fragmentManager: FragmentManager? = null
     var fragmentTransaction: FragmentTransaction? = null
+
+     private val viewModel:MainViewModel by lazy {
+         ViewModelProvider(this).get(MainViewModel::class.java)
+     }
+
+//    private val viewMODEL: MainViewModel by lazy {
+//        ViewModelProvider(this).get(MainViewModel::class.java)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= DetailSalesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
 
         fragment = Fragment1()
         fragmentManager = supportFragmentManager
@@ -42,12 +56,12 @@ class SalesDetail : AppCompatActivity() {
         binding.tablayout.addOnTabSelectedListener(object : OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
 
-                when (tab.position) {
+                fragment = when (tab.position) {
                     0 -> {
-                        fragment = Fragment1()
+                        Fragment1()
                     }
                     else -> {
-                        fragment = Fragment2()
+                        Fragment2()
 
                     }
 
@@ -57,8 +71,6 @@ class SalesDetail : AppCompatActivity() {
                 ft.replace(R.id.frameLayout, fragment!!)
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 ft.commit()
-
-
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {}
@@ -69,26 +81,26 @@ class SalesDetail : AppCompatActivity() {
 //        buildRecyclerView()
 
 
-        var editTextHello = findViewById(R.id.search_view) as EditText
-        Toast.makeText(this, editTextHello.text, Toast.LENGTH_SHORT).show()
-        search_view.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-            override fun afterTextChanged(s: Editable) {
-                filter(s.toString())
-            }
+//        var editTextHello = findViewById(R.id.search_view) as EditText
+//        Toast.makeText(this, editTextHello.text, Toast.LENGTH_SHORT).show()
+//        search_view.addTextChangedListener(object : TextWatcher {
+//            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
+//            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+//            override fun afterTextChanged(s: Editable) {
+//                filter(s.toString())
+//            }
 
-            private fun filter(text: String) {
-//                val filteredList: ArrayList<ExampleItem> = ArrayList()
-//                var mExampleList
-//                for (item in mExampleList) {
-//                    if (item.getText1().toLowerCase().contains(text.toLowerCase())) {
-//                        filteredList.add(item)
-//                    }
-//                }
-//                mAdapter.filterList(filteredList)
-            }
-        })
+//            private fun filter(text: String) {
+////                val filteredList: ArrayList<ExampleItem> = ArrayList()
+////                var mExampleList
+////                for (item in mExampleList) {
+////                    if (item.getText1().toLowerCase().contains(text.toLowerCase())) {
+////                        filteredList.add(item)
+////                    }
+////                }
+////                mAdapter.filterList(filteredList)
+//            }
+//        })
 
         }
 
@@ -107,3 +119,7 @@ class SalesDetail : AppCompatActivity() {
 
 
 }
+
+
+
+
